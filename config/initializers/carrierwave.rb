@@ -1,6 +1,10 @@
 # config/initializers/carrierwave.rb
-
 CarrierWave.configure do |config|
+  if Rails.env.development?
+    config.cache_dir = '/home/vagrant/uploads_tmp/tmp/uploads'
+    config.root = '/home/vagrant/uploads_tmp/tmp'
+  end
+
   config.storage    = :aws
   config.aws_bucket = ENV["AWS_BUCKET"]
   config.aws_acl    = "public-read"
@@ -9,9 +13,8 @@ CarrierWave.configure do |config|
       access_key_id:     ENV["AWS_ACCESS_KEY"],
       secret_access_key: ENV["AWS_SECRET_KEY"],
       region:            ENV["AWS_REGION"]
-}
-
-
+  }
+end
 
 
 
@@ -41,4 +44,3 @@ CarrierWave.configure do |config|
   #   aws_secret_access_key: ENV["8c/1kefzY8pC5IdsXvLbV43O/9DBoD1J8PlC52NN"],        # required
   # }
   # config.fog_directory  = ENV["jayflixterapp"]              # required
-end
