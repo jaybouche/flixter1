@@ -1,6 +1,6 @@
 class User < ApplicationRecord
  has_many :courses
-
+ mount_uploader :image, ImageUploader
 
 	
   # Include default devise modules. Others available are:
