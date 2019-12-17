@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -93,7 +94,10 @@ body {
   min-height: 100px;
   background-color: rgba(36, 32, 33, 0.9);
   color: white;
-  font-family: cursive;
+  font-family: "Helvetica Neue", Helvetica;
+  padding: 10px 0px;
+  margin-top: 30px;
+  font-weight: 100;
 }
 
 #footer a {
@@ -175,4 +179,12 @@ ul .header .fa {
 
 .lessons li p {
   margin: 0;
+}
+
+.social-button {
+  margin: 4px;
+}
+
+.social a:hover {
+  text-decoration: none;
 }
